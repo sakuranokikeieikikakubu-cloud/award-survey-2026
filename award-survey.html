@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026年アワード選考アンケート｜さくらの樹グループ</title>
+<style>
+  :root {
+    --bg: #EEF3F5;
+    --card: #FFFFFF;
+    --teal: #0B4A48;
+    --teal-soft: #3E7A76;
+    --line: #D7E1E3;
+    --orange: #D97A3D;
+    --orange-dark: #B45F27;
+    --danger: #B23A3A;
+    --danger-bg: #FBEAEA;
+    --warn: #A6740F;
+    --warn-bg: #FBF2DE;
+    --ok: #1F6B4E;
+    --ok-bg: #E7F3EC;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    font-family: "Yu Gothic", "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
+    color: #2B3436;
+    line-height: 1.8;
+    padding: 32px 16px 80px;
+  }
+  .wrap { max-width: 640px; margin: 0 auto; }
+  .eyebrow {
+    font-size: 13px;
+    color: var(--teal-soft);
+    letter-spacing: 0.05em;
+    margin-bottom: 6px;
+  }
+  h1 {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--teal);
+    margin: 0 0 14px;
+  }
+  .lead {
+    font-size: 15px;
+    color: #4A5456;
+    margin-bottom: 24px;
+  }
+  .notice {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-left: 4px solid var(--orange);
+    border-radius: 6px;
+    padding: 14px 16px;
+    font-size: 13.5px;
+    color: #4A5456;
+    margin-bottom: 28px;
+  }
+  .notice strong { color: var(--orange-dark); }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 24px;
+    margin-bottom: 20px;
+  }
+  .card h2 {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--teal);
+    margin: 0 0 4px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .card h2 .n {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: var(--teal);
+    color: #fff;
+    font-size: 12px;
+  }
+  .card .sub { font-size: 12.5px; color: #7A8586; margin-bottom: 18px; }
+  label {
+    display: block;
+    font-size: 13.5px;
+    font-weight: 700;
+    color: #3D4749;
+    margin: 16px 0 6px;
+  }
+  label .req { color: var(--danger); font-weight: 400; margin-left: 4px; font-size: 12px; }
+  input[type="text"], textarea, select {
+    width: 100%;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 10px 12px;
+    font-size: 15px;
+    font-family: inherit;
+    color: #2B3436;
+    background: #FBFCFD;
+  }
+  input[type="text"]:focus, textarea:focus, select:focus {
+    outline: 2px solid var(--teal-soft);
+    outline-offset: 1px;
+    border-color: var(--teal-soft);
+  }
+  textarea { min-height: 76px; resize: vertical; }
+  .hint { font-size: 12px; color: #8B9596; margin-top: 4px; }
+  .confirm-card {
+    background: #F5F8F8;
+    border: 1px dashed var(--teal-soft);
+  }
+  .confirm-card h2 { color: var(--teal-soft); }
+  button {
+    width: 100%;
+    background: var(--orange);
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    font-family: inherit;
+    border: none;
+    border-radius: 8px;
+    padding: 15px;
+    cursor: pointer;
+    margin-top: 8px;
+  }
+  button:hover { background: var(--orange-dark); }
+  button:disabled { background: #C6BDB4; cursor: not-allowed; }
+  .status {
+    display: none;
+    border-radius: 8px;
+    padding: 14px 16px;
+    font-size: 14px;
+    margin-top: 16px;
+    line-height: 1.7;
+  }
+  .status.ok { display: block; background: var(--ok-bg); color: var(--ok); }
+  .status.duplicate { display: block; background: var(--warn-bg); color: var(--warn); }
+  .status.error { display: block; background: var(--danger-bg); color: var(--danger); }
+  .status.loading { display: block; background: #F0F2F1; color: #6B7576; }
+  .done-wrap { text-align: center; padding: 40px 0; }
+  .done-wrap h1 { margin-bottom: 8px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div id="form-view">
+    <div class="eyebrow">さくらの樹グループ</div>
+    <h1>2026年アワード選考アンケート</h1>
+    <p class="lead">アワード受賞制度は、従業員のすぐれた功績や組織全体への貢献に対して、会社が感謝の気持ちを込めて表彰する制度です。受賞してほしいと思う職員2名を選び、氏名・所属（職種）・理由をご記入ください。</p>
+
+    <div class="notice">
+      <strong>ご記入前に</strong>：役職の付いている方の氏名は無効となります。フルネームでご記入ください。回答は匿名で集計され、氏名の入力は二重回答の防止にのみ使用します（集計結果には表示されません）。
+    </div>
+
+    <form id="survey-form">
+      <div class="card">
+        <h2><span class="n">1</span>推薦する職員（1人目）</h2>
+        <label>氏名<span class="req">必須</span></label>
+        <input type="text" id="n1-name" required>
+        <label>所属（職種）<span class="req">必須</span></label>
+        <input type="text" id="n1-dept" required placeholder="例：〇〇クリニック／看護師">
+        <label>選んだ理由<span class="req">必須</span></label>
+        <textarea id="n1-reason" required></textarea>
+      </div>
+
+      <div class="card">
+        <h2><span class="n">2</span>推薦する職員（2人目）</h2>
+        <label>氏名<span class="req">必須</span></label>
+        <input type="text" id="n2-name" required>
+        <label>所属（職種）<span class="req">必須</span></label>
+        <input type="text" id="n2-dept" required placeholder="例：〇〇クリニック／看護師">
+        <label>選んだ理由<span class="req">必須</span></label>
+        <textarea id="n2-reason" required></textarea>
+      </div>
+
+      <div class="card confirm-card">
+        <h2>ご自身のお名前</h2>
+        <div class="sub">二重回答を防ぐためだけにシステム上使用します。集計結果や本部には保存されません。</div>
+        <label>お名前（漢字）<span class="req">必須</span></label>
+        <input type="text" id="confirm-name" required>
+        <div class="hint">※お名前がひらがな・カタカナの方はそのままご入力ください</div>
+      </div>
+
+      <button type="submit" id="submit-btn">送信する</button>
+      <div class="status" id="status"></div>
+    </form>
+  </div>
+
+  <div id="done-view" style="display:none;">
+    <div class="done-wrap">
+      <div class="eyebrow">さくらの樹グループ</div>
+      <h1 id="done-title">送信が完了しました</h1>
+      <p class="lead" id="done-message">ご協力ありがとうございました。</p>
+      <button type="button" id="close-btn" onclick="closeThisTab()">ブラウザを閉じる</button>
+      <p class="hint" id="close-fallback" style="display:none; margin-top:12px;">このボタンで閉じられない場合は、お手数ですがこの画面のまま閉じるボタン（×）を押してください。</p>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  // Apps Script Web App の公開URLに置き換えてください（デプロイ後に発行されます）
+  var ENDPOINT_URL = "https://script.google.com/macros/s/AKfycbwroLu93vrPUfaaDzIR7DxB8GwAru25nQIL_hF6MYvXazd_p16PHuya_iD8hyzq5KOE1Q/exec";
+
+  function closeThisTab() {
+    window.close();
+    setTimeout(function () {
+      document.getElementById("close-fallback").style.display = "block";
+    }, 400);
+  }
+
+  var statusEl = document.getElementById("status");
+  var submitBtn = document.getElementById("submit-btn");
+  var formEl = document.getElementById("survey-form");
+
+  function setStatus(kind, message) {
+    statusEl.className = "status " + kind;
+    statusEl.textContent = message;
+  }
+
+  function val(id) {
+    return document.getElementById(id).value.trim();
+  }
+
+  formEl.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    var payload = {
+      confirmName: val("confirm-name"),
+      nominee1: { name: val("n1-name"), dept: val("n1-dept"), reason: val("n1-reason") },
+      nominee2: { name: val("n2-name"), dept: val("n2-dept"), reason: val("n2-reason") }
+    };
+
+    if (!payload.confirmName || !payload.nominee1.name || !payload.nominee1.dept || !payload.nominee1.reason
+        || !payload.nominee2.name || !payload.nominee2.dept || !payload.nominee2.reason) {
+      setStatus("error", "すべての必須項目を入力してください。");
+      return;
+    }
+
+    submitBtn.disabled = true;
+    setStatus("loading", "送信中です。しばらくお待ちください…");
+
+    fetch(ENDPOINT_URL, {
+      method: "POST",
+      headers: { "Content-Type": "text/plain;charset=utf-8" },
+      body: JSON.stringify(payload)
+    })
+      .then(function (res) { return res.json(); })
+      .then(function (data) {
+        if (data.status === "ok") {
+          document.getElementById("form-view").style.display = "none";
+          document.getElementById("done-view").style.display = "block";
+          document.getElementById("done-title").textContent = "送信が完了しました";
+          document.getElementById("done-message").textContent = data.message || "ご協力ありがとうございました。";
+        } else if (data.status === "duplicate") {
+          submitBtn.disabled = false;
+          setStatus("duplicate", data.message || "この氏名では既に回答済みのようです。");
+        } else {
+          submitBtn.disabled = false;
+          setStatus("error", data.message || "送信中にエラーが発生しました。もう一度お試しください。");
+        }
+      })
+      .catch(function () {
+        submitBtn.disabled = false;
+        setStatus("error", "通信エラーが発生しました。ネットワーク状態をご確認のうえ、もう一度お試しください。");
+      });
+  });
+</script>
+</body>
+</html>
